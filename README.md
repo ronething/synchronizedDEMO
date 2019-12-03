@@ -18,4 +18,36 @@
 
 - 不可中断：
 
+如果拿不到锁，只能等待或阻塞
 
+## 原理
+
+加锁和释放锁、monitorenter、monitorexit
+
+```
+javac Decompilation14.java
+javap -verbose Decompilation14
+```
+
+```
+ public void insert(java.lang.Thread);
+    descriptor: (Ljava/lang/Thread;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=4, args_size=2
+         0: aload_0
+         1: getfield      #3                  // Field object:Ljava/lang/Object;
+         4: dup
+         5: astore_2
+         6: monitorenter
+         7: aload_2
+         8: monitorexit
+         9: goto          17
+        12: astore_3
+        13: aload_2
+        14: monitorexit
+        15: aload_3
+        16: athrow
+        17: return
+
+```
