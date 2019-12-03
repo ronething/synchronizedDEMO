@@ -51,3 +51,13 @@ javap -verbose Decompilation14
         17: return
 
 ```
+
+- 可重入原理：加锁次数计数器
+
+- 可见性原理：java 内存模型
+
+![synchronized](./synchronized.png)
+
+## 致谢
+
+[Java高并发之魂：synchronized深度解析](https://www.imooc.com/learn/1086)
